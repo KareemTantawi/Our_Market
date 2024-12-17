@@ -35,14 +35,14 @@ class LoginView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  spacing: 24,
+                  // spacing: 24,
                   children: [
                     CustomTextFormField(
                       labelText: 'Email',
                     ),
-                    // SizedBox(
-                    //   height: 24,
-                    // ),
+                    SizedBox(
+                      height: 24,
+                    ),
                     CustomTextFormField(
                       labelText: 'Password',
                       isSecure: true,
@@ -50,6 +50,23 @@ class LoginView extends StatelessWidget {
                         onPressed: () {},
                         icon: Icon(
                           Icons.visibility_off,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Forget the password?',
+                          style: TextStyle(
+                            color: AppColors.kPrimaryColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15,
+                          ),
                         ),
                       ),
                     ),
