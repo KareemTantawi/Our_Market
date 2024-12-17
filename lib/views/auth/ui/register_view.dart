@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:our_market/core/app_colors.dart';
 import 'package:our_market/core/widgets/custom_row_widget.dart';
 import 'package:our_market/core/widgets/custom_text_from_field.dart';
-import 'package:our_market/views/auth/ui/forget_password_view.dart';
-import 'package:our_market/views/auth/ui/register_view.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +39,12 @@ class LoginView extends StatelessWidget {
                   // spacing: 24,
                   children: [
                     CustomTextFormField(
+                      labelText: 'Name',
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    CustomTextFormField(
                       labelText: 'Email',
                     ),
                     SizedBox(
@@ -59,29 +63,29 @@ class LoginView extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) {
-                                return ForgetPasswordView();
-                              },
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Forget the password?',
-                          style: TextStyle(
-                            color: AppColors.kPrimaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.centerRight,
+                    //   child: TextButton(
+                    //     onPressed: () {
+                    //       Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //           builder: (_) {
+                    //             return ForgetPasswordView();
+                    //           },
+                    //         ),
+                    //       );
+                    //     },
+                    //     child: Text(
+                    //       'Forget the password?',
+                    //       style: TextStyle(
+                    //         color: AppColors.kPrimaryColor,
+                    //         fontWeight: FontWeight.w700,
+                    //         fontSize: 15,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                     SizedBox(
                       height: 20,
                     ),
@@ -100,16 +104,7 @@ class LoginView extends StatelessWidget {
                       height: 20,
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) {
-                              return RegisterView();
-                            },
-                          ),
-                        );
-                      },
+                      onTap: () {},
                       child: RichText(
                         text: TextSpan(
                           text: 'Already have an account? ',
