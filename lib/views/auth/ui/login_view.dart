@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/core/app_colors.dart';
+import 'package:our_market/core/widgets/custom_row_widget.dart';
 import 'package:our_market/core/widgets/custom_text_from_field.dart';
 
 class LoginView extends StatelessWidget {
@@ -69,6 +70,49 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomRowWidget(
+                      text: 'Login',
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomRowWidget(
+                      text: 'Login With Google',
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Already have an account? ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: 'Sign Up',
+                              style: TextStyle(
+                                color: AppColors.kPrimaryColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),
