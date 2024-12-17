@@ -90,14 +90,14 @@ class RegisterView extends StatelessWidget {
                       height: 20,
                     ),
                     CustomRowWidget(
-                      text: 'Login',
+                      text: 'Sign Up',
                       onTap: () {},
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     CustomRowWidget(
-                      text: 'Login With Google',
+                      text: 'Sign Up With Google',
                       onTap: () {},
                     ),
                     SizedBox(
