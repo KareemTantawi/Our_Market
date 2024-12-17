@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:our_market/core/app_colors.dart';
 import 'package:our_market/core/widgets/custom_row_widget.dart';
 import 'package:our_market/core/widgets/custom_text_from_field.dart';
+import 'package:our_market/views/auth/ui/forget_password_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -60,7 +61,16 @@ class LoginView extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return ForgetPasswordView();
+                              },
+                            ),
+                          );
+                        },
                         child: Text(
                           'Forget the password?',
                           style: TextStyle(
