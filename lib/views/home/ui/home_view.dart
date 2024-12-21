@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:our_market/core/app_colors.dart';
 import 'package:our_market/core/components/custom_search_field.dart';
+import 'package:our_market/views/home/ui/widgets/custom_button_widget.dart';
 import 'package:our_market/views/home/ui/widgets/custom_category_widget.dart';
 
 class HomeView extends StatelessWidget {
@@ -61,10 +63,18 @@ class HomeView extends StatelessWidget {
                         bottomLeft: Radius.circular(16),
                         bottomRight: Radius.circular(16),
                       ),
-                      child: Image(
-                        image: NetworkImage(
-                          "https://img.freepik.com/free-vector/simple-product-3d-background-vector-set_53876-156228.jpg?t=st=1734796521~exp=1734800121~hmac=5abe1958b732508560e129f31091dbfbbc475c0557e9ddf92a8e74bc5a99a2de&w=996",
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://img.freepik.com/free-vector/simple-product-3d-background-vector-set_53876-156228.jpg?t=st=1734796521~exp=1734800121~hmac=5abe1958b732508560e129f31091dbfbbc475c0557e9ddf92a8e74bc5a99a2de&w=996',
+                        width: double.infinity,
+                        height: 200,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => Center(
+                          child: CircularProgressIndicator(
+                            color: AppColors.kPrimaryColor,
+                          ),
                         ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
                     ),
                     Positioned(
@@ -89,6 +99,61 @@ class HomeView extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Product Name",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.favorite,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                "223 LE",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "150 LE",
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  // fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          CustomButtonWidget(),
+                        ],
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
