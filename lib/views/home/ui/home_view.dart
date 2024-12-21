@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:our_market/core/app_colors.dart';
 import 'package:our_market/core/components/custom_search_field.dart';
 import 'package:our_market/views/home/ui/widgets/custom_category_widget.dart';
 
@@ -66,6 +67,27 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Positioned(
+                      child: Container(
+                        width: 65,
+                        height: 35,
+                        decoration: BoxDecoration(
+                          color: AppColors.kPrimaryColor,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(16),
+                            bottomRight: Radius.circular(16),
+                          ),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '50% OFF',
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 )
               ],
