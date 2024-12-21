@@ -4,6 +4,7 @@ import 'package:our_market/core/widgets/custom_row_widget.dart';
 import 'package:our_market/core/widgets/custom_text_from_field.dart';
 import 'package:our_market/views/auth/ui/forget_password_view.dart';
 import 'package:our_market/views/auth/ui/register_view.dart';
+import 'package:our_market/views/nav_bar/ui/main_home_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -87,7 +88,16 @@ class LoginView extends StatelessWidget {
                     ),
                     CustomRowWidget(
                       text: 'Login',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) {
+                              return MainHomeView();
+                            },
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(
                       height: 20,
